@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas Example:love</title>
+    <script type="text/javascript">
+         
+     /*
+     对该方法进行抽象，给定(x,y)坐标就可以绘制心形
+     */
+        var x=1;
+        var y=1;
+
+        function drawHeart()
+        {
+          var canvas=document.getElementById("myCanvas");
+  
+          var ctx=canvas.getContext('2d');
+          ctx.beginPath();
+          //开始点
+          ctx.moveTo(75*x,40*y);
+          ctx.bezierCurveTo(75*x,37*y,70*x,25,50*x,25*y);
+          ctx.bezierCurveTo(20*x,25*y,22*x,62.5,22*x,55*y);
+          ctx.bezierCurveTo(20*x,80*y,40*x,102,75*x,120*y);
+          ctx.bezierCurveTo(110*x,102*y,130*x,80,128*x,55*y);
+          ctx.bezierCurveTo(128*x,55*y,130*x,25,100*x,25*y);
+          ctx.bezierCurveTo(85*x,25*y,75*x,37,75*x,40*y);
+         var gradient=ctx.createRadialGradient(0,0,0,0,0,150);
+          gradient.addColorStop(0,"rgba(255,0,0,1.0)");
+         gradient.addColorStop(1,"rgba(255,100,100,1)");
+          ctx.fillStyle=gradient;
+          //ctx.strokeStyle = "red";
+          ctx.fill();
+        }
+    </script>
+  </head>
+  <body>
+      <p><canvas id="myCanvas" width=600 height=600 style = "background: black;"></canvas></p>
+  </body>
+      <script type="text/javascript">
+     
+      drawHeart();
+      </script>
+</html>

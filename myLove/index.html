@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>html5 canvas全屏烟花动画特效 - 站长素材</title>
+
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+</head>
+<body>
+
+
+<div class="demo"></div>
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.fireworks.js"></script>
+<script type="text/javascript">
+	$('.demo').fireworks({ 
+	  sound: true, // sound effect 声音效果 true是有音乐，false是无音乐
+	  opacity: 0.9,  //透明度
+	  width: '50%',  
+	  height: '50%' 
+	});
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+</div>
+<embed src = "./小幸运.mp3" loop = "true" width = "0" height = "20" autostart = "true">
+<!--谷歌浏览器实现不了embed标签循环播放音乐-->
+<audio src="./shoot.mp3" id="audio1" hidden="true" autoplay="true" loop="true">
+
+</audio>
+</body>
+</html>
